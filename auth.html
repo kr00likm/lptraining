@@ -6,6 +6,31 @@
     <title>LP-Brand</title>
   </head>
   <body>
+    <script
+            var lpTag = {};
+  lpTag.identities = [];
+
+  lpTag.identities.push(identityFn);
+  function identityFn(callback) {
+      callback({
+       "iss": "https://kr00likm.github.io/lptraining/auth.html",
+        "sub": "1234567890",
+       "acr": "loa1"
+      });
+  }
+          var token_id = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2tyMDBsaWttLmdpdGh1Yi5pby9scHRyYWluaW5nL2F1dGguaHRtbCIsInN1YiI6IjEyMzQ1Njc4OTAiLCJhY3IiOiJsb2ExIn0.DGP69dfDngna39QAkethpuOm-Z7DHLq5Uzbs0jRn2MwHgr4FHXbeCWAJVGHMfb7X8OOnLbR9naq3BnmB-V6bMNdhPgfmgb_4xhS7z1RndYZR7VjgaEbWUagPEwxVhXVbE039eH9hGYOHXVwyTwULXQYpfrEoY-c7OpZNaFb06kJtoZybFXMv9Bq2qcjHV2c6mkBO_m2MDPbWJD8hQaxSemyoCN_oyla1JvZ1m81oWUge2VQTKXeb8wJKzSqU8cOJpypk7uOfPm4S55SKTzvpMx-Ew2WR7HefLEHTpTA4QKR0LIgtidUU2RU6RKYziUd2lC6_X505wP0OKfa5SD4lnA"  
+            function getAuhtKey(callback) {
+            log("LP asked for id_token or auth code in Code Flow");
+          
+            callback(token_id);
+            // On Failure
+            callback("", "error reason");
+        },
+            
+            
+           
+           
+    </script>
     <h1>Authenticated space.</h1>
     <h2>Authenticated space.</h2>
     <h6>Authenticated space.</h6>
