@@ -3,8 +3,7 @@
     <title>LP-Brand</title>
      <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
         <script>
-    
-    
+       
     lpTag.agentSDK.init()
 var updateCallback = function(data) {
     var newLine = data.newValue;
@@ -35,6 +34,9 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
         <input type="text" name="search" id = movie/>
         <input type="button" value="search" id="submit" />
     </form>
- 
+     <p>This is what the user just said:</p>
+        <p id="usertext"></p>
+        <p>This is what the agent just said:</p>
+        <p id="agenttext"></p>
   </body>
 </html>
