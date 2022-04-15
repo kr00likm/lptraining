@@ -2,7 +2,7 @@
   <head>
     <title>LP-Brand</title>
      <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
-        <script src="./widget.js"></script>
+        <script>
     
     
     lpTag.agentSDK.init()
@@ -25,6 +25,8 @@ var notifyWhenDone = function(err) {
 };
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+          
+          </script>
     
   </head>
   <body>
