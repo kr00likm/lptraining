@@ -70,7 +70,8 @@ console.log(typeof(data));
   return data;
 }
 
-        
+        var tablica=Object.values(makeGetRequest());
+alert(tablica);
      makeGetRequest().then(res => {
         console.log('test then ' + res)
                   document.getElementById("json").textContent = JSON.stringify(makeGetRequest(), undefined, 2);
