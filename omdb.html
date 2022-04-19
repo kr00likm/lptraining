@@ -66,12 +66,14 @@ console.log(typeof(data));
   
   return data;
 }
-
-   
+var testeste = makeGetRequest()
+          var obj = JSON.parse(makeGetRequest());    
+        var test3 = JSON.parse(makeGetRequest());
+        console.log("papapapa" + test3);
+        
      makeGetRequest().then(res => {
         console.log('test then ' + res)
-               var obj = JSON.parse(makeGetRequest());    
-       console.log("tes testt ttt t t t t " + obj)
+               console.log("tes testt ttt t t t t " + obj)
         document.getElementById('funcres').innerHTML = JSON.stringify( makeGetRequest());
          document.getElementById('funcres1').innerHTML = JSON.stringify(makeGetRequest());
          document.getElementById('funcres2').innerHTML = makeGetRequest()
