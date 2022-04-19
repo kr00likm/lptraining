@@ -63,12 +63,12 @@ async function makeGetRequest() {
   return data;
 }
 
- makeGetRequest();        
+   
      
                    
         document.getElementById('funcres').innerHTML = JSON.stringify( makeGetRequest());
          document.getElementById('funcres1').innerHTML = JSON.stringify(makeGetRequest());
-         document.getElementById('funcres2').innerHTML = data.Year;
+         document.getElementById('funcres2').innerHTML = makeGetRequest()
       
     </script>
     
