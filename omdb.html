@@ -58,7 +58,7 @@ async function makeGetRequest() {
 
   let res = await axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb');
 
-  let data = res.data;
+  var data = res.data;
   console.log(data);
   return data;
 }
@@ -68,7 +68,7 @@ async function makeGetRequest() {
                    
         document.getElementById('funcres').innerHTML = JSON.stringify( makeGetRequest());
          document.getElementById('funcres1').innerHTML = JSON.stringify(makeGetRequest());
-         document.getElementById('funcres2').innerHTML = data.year;
+         document.getElementById('funcres2').innerHTML = data.Year;
       
     </script>
     
