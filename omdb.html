@@ -51,6 +51,9 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     <p id="funcres1"></p>
     <p id="funcres2"></p>
     <p id="funcres3"></p>
+   <pre id="json"></pre>
+ 
+    
       <script>
    
     
@@ -70,7 +73,7 @@ console.log(typeof(data));
         
      makeGetRequest().then(res => {
         console.log('test then ' + res)
-               
+                  document.getElementById("json").textContent = JSON.stringify(makeGetRequest(), undefined, 2);
         document.getElementById('funcres').innerHTML = JSON.stringify( makeGetRequest());
          document.getElementById('funcres1').innerHTML = JSON.stringify(makeGetRequest());
          document.getElementById('funcres2').innerHTML = makeGetRequest()
