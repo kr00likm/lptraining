@@ -63,10 +63,10 @@ console.log(typeof(res));
   console.log(data);
 console.log(typeof(data));
   
-  testdata = JSON.parse(data);
-  return testdata;
+  
+  return data;
 }
-
+testdata = JSON.parse(makeGetRequest());
    
      makeGetRequest().then(res => {
         console.log('test then ' + res)
