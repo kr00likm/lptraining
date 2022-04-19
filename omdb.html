@@ -70,7 +70,8 @@ console.log(typeof(data));
    
      makeGetRequest().then(res => {
         console.log('test then ' + res)
-                   
+               var obj = JSON.parse(makeGetRequest());    
+       console.log("tes testt ttt t t t t " + obj)
         document.getElementById('funcres').innerHTML = JSON.stringify( makeGetRequest());
          document.getElementById('funcres1').innerHTML = JSON.stringify(makeGetRequest());
          document.getElementById('funcres2').innerHTML = makeGetRequest()
