@@ -59,10 +59,10 @@ async function makeGetRequest() {
   let res = await axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb');
 
   var data = res.data;
-  test2 = data.json;
+  
   console.log(data);
-  console.log(test2)
-  return test2;
+conosle.log(typeof(data));
+  return data;
 }
 
    
