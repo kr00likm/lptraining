@@ -48,6 +48,9 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     
     <p> test omdb </p>
     <p id="funcres"></p>
+    <p id="funcres1"></p>
+    <p id="funcres2"></p>
+    <p id="funcres3"></p>
       <script>
    
     
@@ -64,20 +67,11 @@ async function makeGetRequest() {
      
                    
         document.getElementById('funcres').innerHTML = JSON.stringify( makeGetRequest());
-        
+         document.getElementById('funcres1').innerHTML = JSON.stringify(makeGetRequest());
+      
     </script>
     
-    <p> data </p>
-    <p> test test test </p>
-    document.write( makeGetRequest() );
-    
-    <pre>
-<code>
-
-data
-
-</code>
-</pre>
+   
     
 
     
