@@ -31,10 +31,16 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
   </head>
   <body>
     <h1>OMDb search</h1>
-    <form class = "example">
+    <form class = "inputFrame">
         <input type="text" name="search" id = movie/>
         <input type="button" value="search" id="submit" />
     </form>
+    
+    <form class = "outputFrame">
+        <input type="text" name="result" id = result/>
+    </form>
+    
+    
      <p>This is what the user just said:</p>
         <p id="usertext"></p>
         <p>This is what the agent just said:</p>
