@@ -55,7 +55,7 @@ async function makeGetRequest() {
 
   let res = await axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb');
 
-  let data = res.data;
+  let data = res.data.Year;
   console.log(data);
   return data;
 }
