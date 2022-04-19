@@ -71,7 +71,7 @@ console.log(typeof(data));
 }
 
         var tablica=Object.values(makeGetRequest());
-alert(tablica);
+console.log(tablica);
      makeGetRequest().then(res => {
         console.log('test then ' + res)
                   document.getElementById("json").textContent = JSON.stringify(makeGetRequest(), undefined, 2);
