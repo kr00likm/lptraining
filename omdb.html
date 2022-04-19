@@ -43,9 +43,18 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     <p> test omdb </p>
       <script>
    
-const res = axios.get(`https://www.omdbapi.com/?t=batman&apikey=b9066cfb`);
-console.log(res);
+    
+async function makeGetRequest() {
+
+  let res = await axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb');
+
+  let data = res.data;
+  console.log(data);
+}
+
+makeGetRequest();
         
+     
         
         
     </script>
