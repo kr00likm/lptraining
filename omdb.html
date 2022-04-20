@@ -85,7 +85,7 @@ console.log(typeof(data));
         
 
      
-     makeGetRequest().then(res => {
+   //  makeGetRequest().then(res => {
         console.log('test then ' + res)
                   document.getElementById("json").textContent = JSON.stringify(makeGetRequest(), undefined, 2);
         document.getElementById('funcres').innerHTML.textContent = JSON.stringify( makeGetRequest());
@@ -94,7 +94,7 @@ console.log(typeof(data));
         document.getElementById('funcres3').innerHTML = "test - obiekt " + makeGetRequest();
       console.log("test funkcji");
        console.log(makeGetRequest());
-     });
+   //  });
     </script>
     
    
