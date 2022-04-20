@@ -72,10 +72,10 @@ console.log(typeof(data));
 }
         
          function makeGetRequest() {
-        axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
+       var result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
         console.log(resp.data.Title);
-          return(resp.data.Title)
+          return(result.data.Title)
     })
     .catch(err => {
         // Handle Error Here
