@@ -58,7 +58,7 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
    
     
 
-     async   function makeGetRequest() {
+     async   function makeGetRequest2() {
 
   let res = await axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb');
 console.log(typeof(res));
@@ -70,6 +70,19 @@ console.log(typeof(data));
   
   return data;
 }
+        
+         function makeGetRequest() {
+        axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb'
+    .then(resp => {
+        console.log(resp.data);
+    })
+    .catch(err => {
+        // Handle Error Here
+        console.error(err);
+    });
+                  }
+        
+        
 
         var tablica=Object.values(makeGetRequest());
 console.log(tablica);
