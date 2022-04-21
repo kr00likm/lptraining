@@ -46,19 +46,22 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
         <p>This is what the agent just said:</p>
         <p id="agenttext"></p>
     
-    <p> test omdb </p>
+    <p> id = "test"  </p>
     <p id="movieTitle"></p>
     <p id="movieYear"></p>
     <p id="Director"></p>
     <p id="Plot"></p>
-    <img id="Poster" src="" width="10%">
+        <img id="Poster" src="" width="10%">
       <script>
   const movieTitle = document.getElementById("movieTitle");
     var result ="";    
     function makeGetRequest() {
     result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
-                console.log(usertext);
+      const test = document.getElementById("test");
+      const value = document.getElementById("usertext").value;
+       test.innerHTML = value;
+                console.log(value);
           console.log(resp.data);
           response = resp.data;
           if (resp.data.Response == "False"){
