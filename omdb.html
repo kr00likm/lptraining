@@ -75,7 +75,8 @@ console.log(typeof(data));
         result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
         console.log(resp.data);
-          response = resp.data.Title
+          response = resp.data.Title;
+          console.log(response);
           return response
     })
     .catch(err => {
@@ -101,7 +102,7 @@ console.log(typeof(data));
         
         
         const data = makeGetRequest()
-        data = data.data
+        
         console.log(data);
     </script>
     
