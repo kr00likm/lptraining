@@ -74,7 +74,7 @@ console.log(typeof(data));
          function makeGetRequest() {
         result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
-        console.log(resp.data.Title);
+        console.log(resp.data);
           return result
     })
     .catch(err => {
@@ -88,11 +88,12 @@ console.log(typeof(data));
      
    //  makeGetRequest().then(res => {
         //console.log('test then ' + res)
-                  document.getElementById("json").textContent = JSON.stringify(makeGetRequest(), undefined, 2);
-        document.getElementById('funcres').innerHTML.textContent = JSON.stringify( makeGetRequest());
-         document.getElementById('funcres1').innerHTML = JSON.stringify(makeGetRequest());
-         document.getElementById('funcres2').innerText = makeGetRequest();
-        document.getElementById('funcres3').innerHTML = "test - obiekt " + makeGetRequest();
+        
+        const movieTitle = document.getElementById("funcres");
+        const movieYear = document.getElementById("funcres2");
+        movieTitle.innerHTML = result.Title
+        movieYear.innerHTML = "2020"
+                  
       console.log("test funkcji");
        console.log(makeGetRequest());
    //  });
