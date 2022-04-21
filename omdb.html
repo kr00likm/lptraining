@@ -51,7 +51,7 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     <p id="movieYear"></p>
     <p id="Director"></p>
     <p id="Plot"></p>
-      
+    <img id="Poster" src="" width="10%">
       <script>
   
     var result ="";    
@@ -66,10 +66,11 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
            const movieYear = document.getElementById("movieYear");
           movieYear.innerHTML = response.Year;
            const Director = document.getElementById("Director");
-          movieYear.innerHTML = response.Director;
+          Director.innerHTML = response.Director;
            const Plot = document.getElementById("Plot");
-          movieYear.innerHTML = response.Plot;
-          
+          Plot.innerHTML = response.Plot;
+          const Poster = document.getElementById("Poster");
+          Poster.src = response.Poster;
           console.log(response);
           return response
     })
