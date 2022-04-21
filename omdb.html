@@ -53,15 +53,17 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     <p id="Plot"></p>
     <img id="Poster" src="" width="10%">
       <script>
-  
+  const movieTitle = document.getElementById("movieTitle");
     var result ="";    
          function makeGetRequest() {
         result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
-          
+                
           console.log(resp.data);
           response = resp.data;
-          const movieTitle = document.getElementById("movieTitle");
+          if (resp.data.Response == "False"){
+          movieTitle.innerHTML = resp.data.Error;
+          } else {
           movieTitle.innerHTML = resp.data.Title;
            const movieYear = document.getElementById("movieYear");
           movieYear.innerHTML = response.Year;
@@ -77,6 +79,7 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     .catch(err => {
         // Handle Error Here
         console.error(err);
+    }
     });
                   }    
     makeGetRequest()
