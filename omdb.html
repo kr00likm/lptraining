@@ -64,9 +64,9 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
           console.log(resp.data);
           response = resp.data;
           const movieTitle = document.getElementById("movieTitle");
-          movieTitle.innerHTML = response.Title
+          movieTitle.innerHTML = resp.data.Title;
            const movieYear = document.getElementById("movieYear");
-          movieTitle.innerHTML = response.Year
+          movieTitle.innerHTML = response.Year;
           console.log(response);
           return response
     })
