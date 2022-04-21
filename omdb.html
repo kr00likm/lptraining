@@ -74,8 +74,10 @@ console.log(typeof(data));
          function makeGetRequest() {
         result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
+          const movieTitle = document.getElementById("funcres");
         console.log(resp.data);
           response = resp.data.Title;
+          movieTitle.innerHTML = response
           console.log(response);
           return response
     })
@@ -91,10 +93,10 @@ console.log(typeof(data));
    //  makeGetRequest().then(res => {
         //console.log('test then ' + res)
         
-        const movieTitle = document.getElementById("funcres");
-        const movieYear = document.getElementById("funcres2");
-        movieTitle.innerHTML = makeGetRequest()
-        movieYear.innerHTML = "2020"
+       // const movieTitle = document.getElementById("funcres");
+        //const movieYear = document.getElementById("funcres2");
+       // movieTitle.innerHTML = makeGetRequest()
+       // movieYear.innerHTML = "2020"
                   
       console.log("test funkcji");
        console.log(makeGetRequest());
