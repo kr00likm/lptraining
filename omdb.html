@@ -49,11 +49,9 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     <p> test omdb </p>
     <p id="movieTitle"></p>
     <p id="movieYear"></p>
-    <p id="funcres2"></p>
-    <p id="funcres3"></p>
-   <pre id="json"></pre>
- 
-    
+    <p id="Director"></p>
+    <p id="Plot"></p>
+      
       <script>
   
     var result ="";    
@@ -67,6 +65,11 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
           movieTitle.innerHTML = resp.data.Title;
            const movieYear = document.getElementById("movieYear");
           movieYear.innerHTML = response.Year;
+           const Director = document.getElementById("Director");
+          movieYear.innerHTML = response.Director;
+           const Plot = document.getElementById("Plot");
+          movieYear.innerHTML = response.Plot;
+          
           console.log(response);
           return response
     })
