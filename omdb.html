@@ -47,8 +47,8 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
         <p id="agenttext"></p>
     
     <p> test omdb </p>
-    <p id="funcres"></p>
-    <p id="funcres1"></p>
+    <p id="movieTitle"></p>
+    <p id="movieYear"></p>
     <p id="funcres2"></p>
     <p id="funcres3"></p>
    <pre id="json"></pre>
@@ -63,9 +63,10 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
           
           console.log(resp.data);
           response = resp.data;
-          const movieTitle = document.getElementById("funcres");
+          const movieTitle = document.getElementById("movieTitle");
           movieTitle.innerHTML = response.Title
-           
+           const movieYear = document.getElementById("movieYear");
+          movieTitle.innerHTML = response.Year
           console.log(response);
           return response
     })
@@ -73,32 +74,10 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
         // Handle Error Here
         console.error(err);
     });
-                  }
-        
-        
-
-     
-   //  makeGetRequest().then(res => {
-        //console.log('test then ' + res)
-        
-       // const movieTitle = document.getElementById("funcres");
-        //const movieYear = document.getElementById("funcres2");
-       // movieTitle.innerHTML = makeGetRequest()
-       // movieYear.innerHTML = "2020"
-                  
-      console.log("test funkcji");
-       console.log(makeGetRequest());
-   //  });
-        
-        
-        const data = makeGetRequest()
-        
-        console.log(data);
+                  }    
+    
     </script>
-    
-   
-    
+       
 
-    
   </body>
 </html>
