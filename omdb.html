@@ -58,7 +58,7 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     function makeGetRequest() {
     result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
-                
+                console.log(usertext);
           console.log(resp.data);
           response = resp.data;
           if (resp.data.Response == "False"){
