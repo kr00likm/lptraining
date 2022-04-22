@@ -40,11 +40,26 @@ var updateCallback = function(data) {
         const test = document.getElementById("test");
             test.innerHTML = newLine[0].text;
 
-
     } else {
         agenttext.innerHTML = newLine[0].text;
     }
 };
+
+
+lpTag.agentSDK.init()
+var findtext = function(data) {
+    var newLine = data.newValue;
+    
+    if (newLine[0].by == "Visitor") {
+        let usertexttofind = newLine[0].text;
+        return usertexttofind ;
+    } else {
+       
+    }
+    
+};
+
+
 
 var notifyWhenDone = function(err) {
     if (err) {
@@ -59,8 +74,9 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
   const movieTitle = document.getElementById("movieTitle");
     var result ="";    
     function makeGetRequest() {
-         
-    result =  axios.get('https://www.omdbapi.com/?t='&newLine[0].text&'&apikey=b9066cfb')
+           
+        console.log(value);
+    result =  axios.get('https://www.omdbapi.com/?t='+findtext+'&apikey=b9066cfb')
     .then(resp => {
           console.log(resp.data);
           response = resp.data;
