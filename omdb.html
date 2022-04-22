@@ -3,11 +3,7 @@
     <title>LP-Brand</title>
      <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script>
-       
-   
-        </script>
-    
+            
   </head>
   <body>
     <h1>OMDb search</h1>
@@ -41,6 +37,10 @@ var updateCallback = function(data) {
     let agenttext = document.getElementById("agenttext");
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
+        const test = document.getElementById("test");
+            test.innerHTML = newLine[0].text;
+
+
     } else {
         agenttext.innerHTML = newLine[0].text;
     }
@@ -56,16 +56,10 @@ var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
           
 
-
-
-
   const movieTitle = document.getElementById("movieTitle");
     var result ="";    
     function makeGetRequest() {
-            const test = document.getElementById("test");
-      const value = document.getElementById("usertext").value;
-      var x = document.getElementById('result');
-      test.innerHTML = value;
+           
         console.log(value);
     result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
