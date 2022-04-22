@@ -70,7 +70,7 @@ var notifyWhenDone = function(err) {
 };
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
-          
+lpTag.agentSDK.bind(pathToData, findtext, notifyWhenDone);         
 
   //const movieTitle = document.getElementById(findtext(data));
     var result ="";    
