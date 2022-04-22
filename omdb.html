@@ -54,12 +54,17 @@ var findtext = function(data) {
     if (newLine[0].by == "Visitor") {
         let usertexttofind = newLine[0].text;
         const test2 = document.getElementById("test2")
-            test2.innerHTML = 'https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb'
+        
+           result =  axios.get('https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb')
+    .then(resp => {
+          console.log(resp.data);
+          response = resp.data;
+          movieTitle.innerHTML = resp.data.Title;
+        
+        
+            test2.innerHTML = resp.data.Title
         return usertexttofind ;
-    } else {
        
-    }
-    
 };
 
 
