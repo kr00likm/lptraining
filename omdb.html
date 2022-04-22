@@ -27,6 +27,7 @@
     <p id="movieYear"></p>
     <p id="Director"></p>
     <p id="Plot"></p>
+    <p id="test2" ></p> </p>
         <img id="Poster" src="" width="10%">
       <script>
 
@@ -74,7 +75,8 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
   const movieTitle = document.getElementById("movieTitle");
     var result ="";    
     function makeGetRequest() {
-          
+           const testtest = document.getElementById("test2")
+            testtest.innerHTML = 'https://www.omdbapi.com/?t='+findtext+'&apikey=b9066cfb'
     result =  axios.get('https://www.omdbapi.com/?t='+findtext+'&apikey=b9066cfb')
     .then(resp => {
           console.log(resp.data);
