@@ -77,8 +77,21 @@ lpTag.agentSDK.bind(pathToData, findtext, notifyWhenDone);
   //const movieTitle = document.getElementById(findtext(data));
     var result ="";    
     function makeGetRequest() {
+      
+      
+       var newLine = data.newValue;
+    
+    if (newLine[0].by == "Visitor") {
+        let usertexttofind = newLine[0].text;
+        const test2 = document.getElementById("test2")
+            test2.innerHTML = 'https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb'
+        return usertexttofind ;
+    } else {
        
-    result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
+    }
+      
+       
+    result =  axios.get('https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb')
     .then(resp => {
           console.log(resp.data);
           response = resp.data;
@@ -103,7 +116,8 @@ lpTag.agentSDK.bind(pathToData, findtext, notifyWhenDone);
        console.error(err);
    });
         }
-      makeGetRequest()
+        lpTag.agentSDK.bind(pathToData, makeGetRequest, notifyWhenDone);   
+      //makeGetRequest()
     </script>
        
 
