@@ -47,6 +47,7 @@ var updateCallback = function(data) {
 };
 
 
+lpTag.agentSDK.init()
 var findtext = function(data) {
     var newLine = data.newValue;
     
@@ -69,13 +70,14 @@ var notifyWhenDone = function(err) {
 };
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
- 
+          
 
   //const movieTitle = document.getElementById(findtext(data));
     var result ="";    
     function makeGetRequest() {
-              
-    result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
+           const test2 = document.getElementById("test2")
+            test2.innerHTML = 'https://www.omdbapi.com/?t='+{encodeURIComponent(test2)}+'&apikey=b9066cfb'
+    result =  axios.get('https://www.omdbapi.com/?t=${encodeURIComponent(findtext)}&apikey=b9066cfb')
     .then(resp => {
           console.log(resp.data);
           response = resp.data;
