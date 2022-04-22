@@ -86,9 +86,7 @@ lpTag.agentSDK.bind(pathToData, findtext, notifyWhenDone);
         const test2 = document.getElementById("test2")
             test2.innerHTML = 'https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb'
         return usertexttofind ;
-    } else {
-       
-    }
+    
       
        
     result =  axios.get('https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb')
@@ -115,9 +113,14 @@ lpTag.agentSDK.bind(pathToData, findtext, notifyWhenDone);
         // Handle Error Here
        console.error(err);
    });
+      } else {
+       
+    }
         }
         lpTag.agentSDK.bind(pathToData, makeGetRequest, notifyWhenDone);   
       //makeGetRequest()
+      
+      
     </script>
        
 
