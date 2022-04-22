@@ -54,7 +54,7 @@ var findtext = function(data) {
     if (newLine[0].by == "Visitor") {
         let usertexttofind = newLine[0].text;
         const test2 = document.getElementById("test2")
-            test2.innerHTML = 'https://www.omdbapi.com/?t=batman&apikey=b9066cfb'
+            test2.innerHTML = 'https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb'
         return usertexttofind ;
     } else {
        
