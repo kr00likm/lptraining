@@ -70,8 +70,9 @@ var notifyWhenDone = function(err) {
 };
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
-          
-
+ 
+var movietitletest = lpTag.agentSDK.bind(pathToData, findtext, notifyWhenDone);         
+console.log(movietitletest);
   //const movieTitle = document.getElementById(findtext(data));
     var result ="";    
     function makeGetRequest() {
