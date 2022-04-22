@@ -76,8 +76,8 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     var result ="";    
     function makeGetRequest() {
            const testtest = document.getElementById("test2")
-            testtest.innerHTML = 'https://www.omdbapi.com/?t='+findtext+'&apikey=b9066cfb'
-    result =  axios.get('https://www.omdbapi.com/?t='+findtext+'&apikey=b9066cfb')
+            testtest.innerHTML = 'https://www.omdbapi.com/?t=${encodeURIComponent(testtest)}&apikey=b9066cfb'
+    result =  axios.get('https://www.omdbapi.com/?t=${encodeURIComponent(findtext)}&apikey=b9066cfb')
     .then(resp => {
           console.log(resp.data);
           response = resp.data;
