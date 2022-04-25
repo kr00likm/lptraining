@@ -44,7 +44,8 @@ var updateCallback = function(data) {
     let agenttext = document.getElementById("agenttext");
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
-      makeGetRequest()
+      var findmovie = newLine[0].text
+      makeGetRequest(findmovie)
     } else {
         agenttext.innerHTML = newLine[0].text;
     }
@@ -66,12 +67,12 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
         
   const movieTitle = document.getElementById("movieTitle");
     var result ="";    
-    function makeGetRequest() {
+    function makeGetRequest(findmovie) {
             const test = document.getElementById("test");
       const value = document.getElementById("usertext").value;
       test.innerHTML = value;
         console.log(value);
-    result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
+    result =  axios.get('https://www.omdbapi.com/?t='+ findmovie + '&apikey=b9066cfb')
     .then(resp => {
           console.log(resp.data);
           response = resp.data;
