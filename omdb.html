@@ -1,105 +1,81 @@
-<html>
-  <head>
-    <title>LP-Brand</title>
-     <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <html>
+    <head>
+      <title>LP-Brand</title>
+       <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+         
+    </head>
+    <body>
+      <h1>OMDb search</h1>
+     
+      <p id="test" ></p> </p>
+      <p id="movieTitle"></p>
+      <p id="movieYear"></p>
+      <p id="Director"></p>
+      <p id="Plot"></p>
+      <img id="Poster" src="" width="100%">
         <script>
-       
-  
-          
-        </script>
+  lpTag.agentSDK.init()
+  var updateCallback = function(data) {
+  var newLine = data.newValue;
+  let usertext = document.getElementById("usertext");
+  let agenttext = document.getElementById("agenttext");
     
-  </head>
-  <body>
-    <h1>OMDb search</h1>
-    <form class = "inputFrame">
-        <input type="text" name="search" id = movie/>
-        <input type="button" value="search" id="submit" />
-    </form>
-    
-    <form class = "outputFrame">
-        <input type="text" name="result" id = result/>
-    </form>
-    
-    
-     <p>This is what the user just said:</p>
-        <p id="usertext"></p>
-        <p>This is what the agent just said:</p>
-        <p id="agenttext"></p>
-    
-    <p id="test" ></p> </p>
-    <p id="movieTitle"></p>
-    <p id="movieYear"></p>
-    <p id="Director"></p>
-    <p id="Plot"></p>
-        <img id="Poster" src="" width="10%">
-      <script>
-        
-        
-        
-          lpTag.agentSDK.init()
-var updateCallback = function(data) {
-    var newLine = data.newValue;
-    let usertext = document.getElementById("usertext");
-    let agenttext = document.getElementById("agenttext");
-    if (newLine[0].by == "Visitor") {
-        usertext.innerHTML = newLine[0].text;
-      var findmovie = newLine[0].text
-      makeGetRequest(findmovie)
-    } else {
-        agenttext.innerHTML = newLine[0].text;
-    }
-};
-
-var notifyWhenDone = function(err) {
-    if (err) {
-        console.log(err);
-    }
-    console.log("set the value");
-};
-var pathToData = "chatTranscript.lines";
-lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
-        
-        
-        
-              
-        
-        
-  const movieTitle = document.getElementById("movieTitle");
-    var result ="";    
-    function makeGetRequest(findmovie) {
-            const test = document.getElementById("test");
-      const value = document.getElementById("usertext").value;
-      test.innerHTML = value;
-        console.log(value);
-    result =  axios.get('https://www.omdbapi.com/?t='+ findmovie + '&apikey=b9066cfb')
-    .then(resp => {
-          console.log(resp.data);
-          response = resp.data;
-          if (resp.data.Response == "False"){
-          movieTitle.innerHTML = resp.data.Error;
-          } else {
-          movieTitle.innerHTML = resp.data.Title;
-           const movieYear = document.getElementById("movieYear");
-          movieYear.innerHTML = response.Year;
-           const Director = document.getElementById("Director");
-          Director.innerHTML = response.Director;
-           const Plot = document.getElementById("Plot");
-          Plot.innerHTML = response.Plot;
-          const Poster = document.getElementById("Poster");
-          Poster.src = response.Poster;
-          console.log(response);
-          return response
+  if (newLine[0].by == "Visitor") {
+              usertext.innerHTML = newLine[0].text;
+              var findmovie = newLine[0].text
+               makeGetRequest(findmovie)
+  } else {
+          agenttext.innerHTML = newLine[0].text;
           }
-    })
-    .catch(err => {
-        // Handle Error Here
-       console.error(err);
-   });
-        }
-   // makeGetRequest()
-    </script>
-       
+  };
 
-  </body>
-</html>
+  var notifyWhenDone = function(err) {
+      if (err) {
+          console.log(err);
+      }
+      console.log("set the value");
+  };
+  var pathToData = "chatTranscript.lines";
+  lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+
+
+
+
+
+
+    const movieTitle = document.getElementById("movieTitle");
+      var result ="";    
+      function makeGetRequest(findmovie) {
+              
+      result =  axios.get('https://www.omdbapi.com/?t='+ findmovie + '&apikey=b9066cfb')
+      .then(resp => {
+            console.log(resp.data);
+            response = resp.data;
+            if (resp.data.Response == "False"){
+            movieTitle.innerHTML = resp.data.Error;
+            } else {
+            movieTitle.innerHTML = resp.data.Title;
+             const movieYear = document.getElementById("movieYear");
+            movieYear.innerHTML = response.Year;
+             const Director = document.getElementById("Director");
+            Director.innerHTML = response.Director;
+             const Plot = document.getElementById("Plot");
+            Plot.innerHTML = response.Plot;
+            const Poster = document.getElementById("Poster");
+            Poster.src = response.Poster;
+            console.log(response);
+            return response
+            }
+      })
+      .catch(err => {
+          // Handle Error Here
+         console.error(err);
+     });
+          }
+     // makeGetRequest()
+      </script>
+
+
+    </body>
+  </html>
