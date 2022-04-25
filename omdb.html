@@ -5,26 +5,7 @@
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script>
        
-    lpTag.agentSDK.init()
-var updateCallback = function(data) {
-    var newLine = data.newValue;
-    let usertext = document.getElementById("usertext");
-    let agenttext = document.getElementById("agenttext");
-    if (newLine[0].by == "Visitor") {
-        usertext.innerHTML = newLine[0].text;
-    } else {
-        agenttext.innerHTML = newLine[0].text;
-    }
-};
-
-var notifyWhenDone = function(err) {
-    if (err) {
-        console.log(err);
-    }
-    console.log("set the value");
-};
-var pathToData = "chatTranscript.lines";
-lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+  
           
         </script>
     
@@ -53,6 +34,36 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
     <p id="Plot"></p>
         <img id="Poster" src="" width="10%">
       <script>
+        
+        
+        
+          lpTag.agentSDK.init()
+var updateCallback = function(data) {
+    var newLine = data.newValue;
+    let usertext = document.getElementById("usertext");
+    let agenttext = document.getElementById("agenttext");
+    if (newLine[0].by == "Visitor") {
+        usertext.innerHTML = newLine[0].text;
+      makeGetRequest()
+    } else {
+        agenttext.innerHTML = newLine[0].text;
+    }
+};
+
+var notifyWhenDone = function(err) {
+    if (err) {
+        console.log(err);
+    }
+    console.log("set the value");
+};
+var pathToData = "chatTranscript.lines";
+lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+        
+        
+        
+              
+        
+        
   const movieTitle = document.getElementById("movieTitle");
     var result ="";    
     function makeGetRequest() {
@@ -85,7 +96,7 @@ lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
        console.error(err);
    });
         }
-      makeGetRequest()
+   // makeGetRequest()
     </script>
        
 
