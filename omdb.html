@@ -3,7 +3,31 @@
     <title>LP-Brand</title>
      <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-            
+        <script>
+       
+    lpTag.agentSDK.init()
+var updateCallback = function(data) {
+    var newLine = data.newValue;
+    let usertext = document.getElementById("usertext");
+    let agenttext = document.getElementById("agenttext");
+    if (newLine[0].by == "Visitor") {
+        usertext.innerHTML = newLine[0].text;
+    } else {
+        agenttext.innerHTML = newLine[0].text;
+    }
+};
+
+var notifyWhenDone = function(err) {
+    if (err) {
+        console.log(err);
+    }
+    console.log("set the value");
+};
+var pathToData = "chatTranscript.lines";
+lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+          
+        </script>
+    
   </head>
   <body>
     <h1>OMDb search</h1>
@@ -27,75 +51,16 @@
     <p id="movieYear"></p>
     <p id="Director"></p>
     <p id="Plot"></p>
-    <p id="test2" ></p> </p>
         <img id="Poster" src="" width="10%">
       <script>
-
-lpTag.agentSDK.init()
-var updateCallback = function(data) {
-    var newLine = data.newValue;
-    let usertext = document.getElementById("usertext");
-    let agenttext = document.getElementById("agenttext");
-    if (newLine[0].by == "Visitor") {
-        usertext.innerHTML = newLine[0].text;
-        const test = document.getElementById("test");
-            test.innerHTML = newLine[0].text;
-
-    } else {
-        agenttext.innerHTML = newLine[0].text;
-    }
-};
-
-
-lpTag.agentSDK.init()
-var findtext = function(data) {
-    var newLine = data.newValue;
-    
-    if (newLine[0].by == "Visitor") {
-        let usertexttofind = newLine[0].text;
-        const test2 = document.getElementById("test2")
-        
-           result =  axios.get('https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb')
-    .then(resp => {
-          console.log(resp.data);
-          response = resp.data;
-          movieTitle.innerHTML = resp.data.Title;
-        
-        
-            test2.innerHTML = resp.data.Title
-        return usertexttofind ;
-       
-});
-
-
-
-var notifyWhenDone = function(err) {
-    if (err) {
-        console.log(err);
-    }
-    console.log("set the value");
-};
-var pathToData = "chatTranscript.lines";
-lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
-lpTag.agentSDK.bind(pathToData, findtext, notifyWhenDone);         
-
-  //const movieTitle = document.getElementById(findtext(data));
+  const movieTitle = document.getElementById("movieTitle");
     var result ="";    
-        lpTag.agentSDK.init()
     function makeGetRequest() {
-      
-      
-       var newLine = data.newValue;
-    
-    if (newLine[0].by == "Visitor") {
-        let usertexttofind = newLine[0].text;
-        const test2 = document.getElementById("test2")
-            test2.innerHTML = 'https://www.omdbapi.com/?t=' + usertexttofind + '&apikey=b9066cfb'
-        return usertexttofind ;
-    
-      var urladdress = 'https://www.omdbapi.com/?t=joker&apikey=b9066cfb'
-       
-    result =  axios.get(urladdress)
+            const test = document.getElementById("test");
+      const value = document.getElementById("usertext").value;
+      test.innerHTML = value;
+        console.log(value);
+    result =  axios.get('https://www.omdbapi.com/?t=batman&apikey=b9066cfb')
     .then(resp => {
           console.log(resp.data);
           response = resp.data;
@@ -119,14 +84,8 @@ lpTag.agentSDK.bind(pathToData, findtext, notifyWhenDone);
         // Handle Error Here
        console.error(err);
    });
-      } else {
-       
-    }
         }
-       // lpTag.agentSDK.bind(pathToData, makeGetRequest, notifyWhenDone);   
       makeGetRequest()
-      
-      
     </script>
        
 
