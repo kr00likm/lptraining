@@ -17,16 +17,13 @@
         <script>
   lpTag.agentSDK.init()
   var updateCallback = function(data) {
-  var newLine = data.newValue;
-  let usertext = document.getElementById("usertext");
-  let agenttext = document.getElementById("agenttext");
     
   if (newLine[0].by == "Visitor") {
               usertext.innerHTML = newLine[0].text;
               var findmovie = newLine[0].text
                makeGetRequest(findmovie)
   } else {
-          agenttext.innerHTML = newLine[0].text;
+          
           }
   };
 
