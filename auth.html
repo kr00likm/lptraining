@@ -130,9 +130,9 @@
           "sub": "1234567890", 
            "iss": "https://jwt.io",
             "aud": "acc:qa57221676",
-            "exp": 2034971930, 
-               "iat": 1471899942, 
-               "given_name": "Eitan", 
+          //  "exp": 2034971930, 
+               //"iat": 1471899942, 
+              // "given_name": "Eitan", 
                   "acr": "loa1"
           
           
@@ -143,7 +143,7 @@
  
              function lpGetAuthenticationToken(callback) {
                           var id_token =
-                              "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaXNzIjoiaHR0cHM6Ly9qd3QuaW8iLCJhdWQiOiJhY2M6cWE1NzIyMTY3NiIsImV4cCI6MjAzNDk3MTkzMCwiaWF0IjoxNDcxODk5OTQyLCJnaXZlbl9uYW1lIjoiRWl0YW4iLCJhY3IiOiJsb2ExIn0.jd0V2bw-EOBjy9bIF9pKhG1rxi3h8Bj3sU-oJ4_XyAXKb2tZPh8xOnlT-v4RtKrecNnUbZNb0ZE_B6mq3ZAfGGxvU__xJFIJmD4Q4fJzKAexpsm4TgfeXAZ9z8gI-InKV6WCE4aaGhPvzf1DCLi1mjseNHCPRowx2IwW3xi_-LqUmJOAmFZ2AfUAmwScmMJaJNXZAh6pk1SDaCGfkyz5SR296ebLN0zd4FN8o4gaIbJFqkPw18_a4Zl9Ub2JFyeio_OThG0h07pCu6Oio2av0t0LYjVhTnbwH6GG7Sbzd7jlX4BZrHzU3Rj8HMM-l9lSe2JY8Rry5IsQf74m4PA6Aw";
+                              "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaXNzIjoiaHR0cHM6Ly9qd3QuaW8iLCJhdWQiOiJhY2M6cWE1NzIyMTY3NiIsImFjciI6ImxvYTEifQ.QQQ5i6fcmkSiwSHsQQ7EMMmNittX_VH0RrdcdW4HrUSkpEi0QTBIcmShMjdPhtfV_oBQbYoVAEXNxsbfFOXQ5zr7GsoXL9kST6lUqRYiarHopOyK9QaPTqafwxATFL3vip6MGaER_NmpOkgG_VW8no3OD4f04_A3XrIE2wbH-bvpR0MKW_D_jCPxwQ6Y0xkfIBmU2HEaFMThdD806z2qiKou3Kk-6mVUxZoraX5n_MZwjZd2mUHU8lh5l09qWGcTLkKu-IqCDcYdg0Nbmm-qNe87QiNdMoAEgtuZhT2y7xTTsZkkwusiW9CN0DdF74vq37ght3tvaIqqliQM09XuiA";
       //  "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIrOTcyLTMtNTU1NS01NTUiLCJpc3MiOiJodHRwczovL2p3dC5pbyIsImF1ZCI6ImFjYzpxYTU3MjIxNjc2IiwiZXhwIjoyMDM0OTcxOTMwLCJpYXQiOjE0NzE4OTk5NDIsImdpdmVuX25hbWUiOiJFaXRhbiIsImFjciI6ImxvYTEifQ.n9hYTeaeS03lccbdNnXMOpgZisHfJm9qrjZZhwX0vkC-eOafPnn4rqqqXL9aYJv_rvdSVKK_TFufITX_W9aDpyls9BFlvZTKjTjADohP1KGl-f8tDDrLQrrLrfN4ESPudOhR0_BS58AxiuaXePzAdPLsUmQx40IMNwkUjjEEM2dML7nQM5v0DRypaDuNpS3-6W_OBLghEnzr2wwmWjpOC1S3tT_U70lPLoCp9i5dYbs8VO9HRvzQ0I1Mbh58qVGGVNcolljXc0xicwlxN_65xad3iOP6DeQJyNH5-NYSnIISjTNjZoG2Dfzzwr5QXr_3h9ABgmYGfss4lRA4_5aBGw";
             console.log("LP asked for id_token or auth code in Code Flow");
             console.log(id_token);
