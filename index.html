@@ -21,7 +21,7 @@ var data = {
    "cartTotal":  cartTotal 
      
      }
- 
+ const title =  document.title
     const cartTotal = document.getElementById("total");
 lpTag.sdes.push(data);*/
         
@@ -35,30 +35,9 @@ lpTag.sdes.push(data);*/
 
           "currency": "USD", //CURRENCY CODE
 
-          "orderId": "DRV1534XC", //UNIQUE ORDER ID OR RECEIPT ID
+          "title": title 
 
-          "cart":{
-
-              "products": [{
-
-                    "product": {
-
-                      "name": "Dune (BlueRay)", //PRODUCT NAME
-
-                      "category": "DVD", //PRODUCT CATEGORY NAME
-
-                      "sku": "xyz001", //PRODUCT SKU OR UNIQUE IDENTIFIER
-
-                      "price": 5 //SINGLE PRODUCT PRICE
-
-                    },
-
-              "quantity": 3 //QUANTITY OF THIS PRODUCT
-
-              }]
-
-            }
-
+            
         }
 
       );
