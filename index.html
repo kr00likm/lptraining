@@ -38,17 +38,30 @@ lpTag.sdes.push(data);*/
 
           "type": "cart", //MANDATORY
 
-          "total": "100", //TOTAL VALUE OF THE TRANSACTION AFTER DISCOUNT
+          "total": cartTotal, //TOTAL VALUE OF THE TRANSACTION AFTER DISCOUNT
 
           "currency": "USD", //CURRENCY CODE
 
-          "title": "test" 
-
-            
+                    
         }
 
       );
         
+        
+        
+        
+         lpTag.sdes.push(
+           
+           
+           {
+  "type": "mrktInfo", //MANDATORY
+    "info": {
+      "channel": "1", //ORIGINATING CHANNEL ENUM:
+      "affiliate": title, //AFFILIATE NAME
+      
+  }
+}
+         );   
        </script>
   </body>
 </html>
