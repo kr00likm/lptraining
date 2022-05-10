@@ -21,7 +21,7 @@
           lpTag.agentSDK.init()
 var updateCallback = function(data) {
     var newLine = data.newValue;
-    
+    console.log(data);
     if (newLine[0].by == "Visitor") {
       var findmovie = newLine[0].text;
       makeGetRequest(findmovie)
